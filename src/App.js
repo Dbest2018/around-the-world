@@ -2,15 +2,15 @@ import React from "react";
 import "./App.css";
 
 import Header from "./components/Header/Header";
-import Nav from "./components/Nav/Nav";
-import Country from "./components/Country/Country";
+import Home from "./components/Home/Home";
+import Detail from "./components/Detail/Detail";
 
 function App() {
   return (
     <div className="app">
       <Header />
-      <Nav />
-      <Country />
+      <Home />
+      <Detail />
     </div>
   );
 }

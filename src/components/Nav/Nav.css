@@ -1,0 +1,39 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav__search {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  width: 30%;
+  border-radius: 5px;
+  background-color: var(--light-mode-elements);
+  color: var(--light-mode-input);
+}
+
+.nav__search-input {
+  border: none;
+  margin-left: 0.5rem;
+}
+
+.nav__search-input:focus {
+  outline: none;
+}
+
+.nav__filter {
+  padding: 0 1rem;
+  border-radius: 5px;
+  background-color: var(--light-mode-elements);
+}
+
+.nav__filter-select {
+  border: none;
+  color: var(--light-mode-text);
+  font-weight: 600;
+  font-family: "Nunito Sans", sans-serif;
+}
+.nav__filter-select:focus {
+  outline: none;
+}
