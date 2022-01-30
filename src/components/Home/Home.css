@@ -3,3 +3,11 @@
   height: 100vh;
   padding: 1rem 2rem;
 }
+
+.home__countries {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  gap: 2.5rem;
+}
