@@ -37,3 +37,22 @@
 .nav__filter-select:focus {
   outline: none;
 }
+
+@media screen and (max-width: 390px) {
+  .nav {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .nav__search {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .nav__filter {
+    width: 60%;
+    padding: 1rem;
+  }
+}
