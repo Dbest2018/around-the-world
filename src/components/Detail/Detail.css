@@ -1,0 +1,51 @@
+.detail {
+  padding: 2rem;
+}
+
+.detail__nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid whitesmoke;
+  width: 5rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+.detail__nav-text {
+  margin-left: 0.25rem;
+}
+
+.detail__country {
+  height: 300px;
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.detail__country-flag {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.detail__country-info {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.detail__country-info__header {
+  padding: 1rem 0;
+}
+
+.detail__country-info__middle {
+  flex: 1;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 0.5rem;
+}
+
+.detail__country-info__footer {
+}
