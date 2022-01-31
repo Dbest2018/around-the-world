@@ -7,7 +7,17 @@
 .home__countries {
   margin-top: 1rem;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: auto auto auto auto;
   grid-template-rows: auto;
   gap: 2.5rem;
+}
+
+@media screen and (max-width: 390px) {
+  .home__countries {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    gap: 2rem;
+  }
 }
