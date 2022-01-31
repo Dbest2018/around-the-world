@@ -10,6 +10,8 @@
   width: 5rem;
   padding: 0.5rem;
   border-radius: 5px;
+  cursor: pointer;
+  background-color: var(--light-mode-elements);
 }
 
 .detail__nav-text {
@@ -22,6 +24,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
+  background-color: var(--light-mode-elements);
 }
 
 .detail__country-flag {
@@ -38,6 +41,7 @@
 
 .detail__country-info__header {
   padding: 1rem 0;
+  font-weight: 800;
 }
 
 .detail__country-info__middle {
@@ -47,5 +51,33 @@
   gap: 0.5rem;
 }
 
+.text {
+  font-weight: 600;
+}
+
+.text > span {
+  font-weight: 300;
+  font-size: var(--fs-detail);
+}
+
 .detail__country-info__footer {
+}
+
+@media screen and (max-width: 390px) {
+  .detail__country {
+    height: 300px;
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    background-color: var(--light-mode-elements);
+  }
+
+  .detail__country-info__middle {
+    flex: 1;
+    display: grid;
+    grid-template-columns: auto;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
 }

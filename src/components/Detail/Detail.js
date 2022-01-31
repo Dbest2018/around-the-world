@@ -36,7 +36,7 @@ const Detail = ({ countries }) => {
               </div>
               <div className="text">
                 Sub Region:{" "}
-                <span>{countries[0] && countries[0].subRegion}</span>
+                <span>{countries[0] && countries[0].subregion}</span>
               </div>
               <div className="text">
                 Capital: <span>{countries[0] && countries[0].capital}</span>
