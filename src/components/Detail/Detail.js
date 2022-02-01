@@ -6,7 +6,20 @@ import { useParams, Link } from "react-router-dom";
 
 const Detail = ({ countries }) => {
   let params = useParams();
-  console.log(params.id);
+  const country = countries[params.id];
+  const {
+    flags,
+    name,
+    nativeName,
+    population,
+    region,
+    subregion,
+    capital,
+    topLevelDomain,
+    currencies,
+    languages,
+    borders,
+  } = country;
   return (
     <div className="detail">
       <Link to="/" className="detail__link">
@@ -17,80 +30,53 @@ const Detail = ({ countries }) => {
       </Link>
       <div className="detail__country">
         <img
-          src={countries[params.id] && countries[params.id].flags.svg}
+          src={flags.svg}
           alt="country-flag"
           className="detail__country-flag"
         />
         <div className="detail__country-info">
-          <div className="detail__country-info__header">
-            {countries[params.id] && countries[params.id].name}
-          </div>
+          <div className="detail__country-info__header">{name}</div>
 
           <div className="detail__country-info__middle">
             <div className="detail__country-info__left">
               <div className="text">
-                Native Name:{" "}
-                <span>
-                  {countries[params.id] && countries[params.id].nativeName}
-                </span>
+                Native Name: <span>{nativeName}</span>
               </div>
               <div className="text">
-                Population:{" "}
-                <span>
-                  {countries[params.id] && countries[params.id].population}
-                </span>
+                Population: <span>{population}</span>
               </div>
               <div className="text">
-                Region:{" "}
-                <span>
-                  {countries[params.id] && countries[params.id].region}
-                </span>
+                Region: <span>{region}</span>
               </div>
               <div className="text">
-                Sub Region:{" "}
-                <span>
-                  {countries[params.id] && countries[params.id].subregion}
-                </span>
+                Sub Region: <span>{subregion}</span>
               </div>
               <div className="text">
-                Capital:{" "}
-                <span>
-                  {countries[params.id] && countries[params.id].capital}
-                </span>
+                Capital: <span>{capital ? capital : "None"}</span>
               </div>
             </div>
 
             <div className="detail__country-info__right">
               <div className="text">
                 Top Level Domain:{" "}
-                <span>
-                  {countries[params.id] &&
-                    countries[params.id].topLevelDomain[0]}
-                </span>
+                <span>{topLevelDomain ? topLevelDomain[0] : "None"}</span>
               </div>
               <div className="text">
                 Currencies:{" "}
-                <span>
-                  {countries[params.id] &&
-                    countries[params.id].currencies[0].code}
-                </span>
+                <span>{currencies ? currencies[0].code : "None"}</span>
               </div>
               <div className="text">
-                Languages:{" "}
-                <span>
-                  {countries[params.id] &&
-                    countries[params.id].languages[0].name}
-                </span>
+                Languages: <span>{languages ? languages[0].name : "None"}</span>
               </div>
             </div>
           </div>
 
-          <div className="country-info__footer">
-            <div className="text">
-              Border Countries:{" "}
-              {/* <span>
-                {countries[params.id] && countries[params.id].borders[0]}
-              </span> */}
+          <div className="detail__country-info__footer">
+            <div className="text">Border Countries: </div>
+            <div className="footer__countries">
+              <div>{borders ? borders[0] : "None"}</div>
+              <div>{borders ? borders[1] : "None"}</div>
+              <div>{borders ? borders[2] : "None"}</div>
             </div>
           </div>
         </div>
