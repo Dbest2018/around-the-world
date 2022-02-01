@@ -22,9 +22,11 @@ const Home = ({ countries }) => {
     <div className="home">
       <Nav />
       <div className="home__countries">
-        {countries.map((country) => {
+        {countries.map((country, index) => {
           return (
             <Country
+              key={index}
+              id={index}
               flag={country.flag}
               name={country.name}
               population={country.population}

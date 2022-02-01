@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import axios from "axios";
 
@@ -23,11 +24,17 @@ function App() {
   }, []);
 
   return (
-    <div className="app">
-      <Header />
-      {/* <Home countries={countries} /> */}
-      <Detail countries={countries} />
-    </div>
+    <BrowserRouter>
+      <div className="app">
+        <Header />
+        {/* <Home countries={countries} /> */}
+        {/* <Detail countries={countries} /> */}
+      </div>
+      <Routes>
+        <Route path="/" element={<Home countries={countries} />} />
+        <Route path="/detail/:id" element={<Detail countries={countries} />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

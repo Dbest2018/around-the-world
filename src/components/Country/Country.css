@@ -6,6 +6,11 @@
 .country:hover {
   cursor: pointer;
 }
+
+.link {
+  text-decoration: none;
+}
+
 .country__img {
   width: 100%;
   height: 50%;

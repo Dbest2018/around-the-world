@@ -2,6 +2,11 @@
   padding: 2rem;
 }
 
+.detail__link {
+  text-decoration: none;
+  color: var(--light-mode-text);
+}
+
 .detail__nav {
   display: flex;
   justify-content: center;
