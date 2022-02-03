@@ -6,7 +6,7 @@
 .home__countries {
   margin-top: 1rem;
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto;
   gap: 2.5rem;
 }
@@ -15,7 +15,7 @@
   .home__countries {
     margin-top: 1rem;
     display: grid;
-    grid-template-columns: auto;
+    grid-template-columns: 1fr;
     grid-template-rows: auto;
     gap: 2rem;
   }
