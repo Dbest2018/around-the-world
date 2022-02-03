@@ -41,14 +41,13 @@ function App() {
   });
 
   useEffect(() => {
-    setRegionSelected("");
     async function fetchData() {
       const data = await api.get("./");
       setCountries(data.data);
-      return countries;
+      setCountryFilter(data.data);
     }
     fetchData();
-  }, []);
+  }, [api]);
 
   const toggleDarkMode = () => {
     setDarkMode((prevMode) => !prevMode);
