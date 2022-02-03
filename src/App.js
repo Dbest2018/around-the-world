@@ -11,6 +11,7 @@ function App() {
   const [countries, setCountries] = useState([]);
   const [countryFilter, setCountryFilter] = useState([]);
   const [darkMode, setDarkMode] = useState(false);
+  const [regionSelected, setRegionSelected] = useState("");
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -21,10 +22,26 @@ function App() {
     setCountryFilter(filter);
   };
 
+  const handleRegion = (e) => {
+    e.preventDefault();
+    const { value } = e.target;
+    setRegionSelected(value);
+    if (value.toLowerCase() === "all") {
+      setCountryFilter(countries);
+      return;
+    }
+    const countriesInRegion = countries.filter(
+      (country) => country.region.toLowerCase() === value.toLowerCase()
+    );
+    setCountryFilter(countriesInRegion);
+  };
+
   const api = axios.create({
     baseURL: "https://restcountries.com/v2/all",
   });
+
   useEffect(() => {
+    setRegionSelected("");
     async function fetchData() {
       const data = await api.get("./");
       setCountries(data.data);
@@ -51,6 +68,8 @@ function App() {
                 countries={countryFilter}
                 darkMode={darkMode}
                 handleSearch={handleSearch}
+                handleRegion={handleRegion}
+                regionSelected={regionSelected}
               />
             }
           />

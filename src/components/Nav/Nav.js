@@ -3,7 +3,7 @@ import "./Nav.css";
 
 import { IoIosSearch } from "react-icons/io";
 
-const Nav = ({ darkMode, handleSearch }) => {
+const Nav = ({ darkMode, handleSearch, handleRegion, regionSelected }) => {
   const styles = {
     backgroundColor: darkMode
       ? "var(--dark-mode-elements)"
@@ -25,15 +25,17 @@ const Nav = ({ darkMode, handleSearch }) => {
       </div>
 
       <select
-        value="default"
+        value={regionSelected}
         className="nav__filter nav__filter-select"
         style={styles}
+        onChange={handleRegion}
       >
-        <option value="default" disabled hidden>
+        <option value={regionSelected} disabled hidden>
           Filter by Region
         </option>
-        <option value="afica">Africa</option>
-        <option value="america">America</option>
+        <option value="all">All</option>
+        <option value="africa">Africa</option>
+        <option value="americas">America</option>
         <option value="asia">Asia</option>
         <option value="europe">Europe</option>
         <option value="oceania">Oceania</option>
