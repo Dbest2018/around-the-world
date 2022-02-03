@@ -1,6 +1,6 @@
 .country {
-  justify-items: center;
-  border-radius: 5px;
+  height: 100%;
+  width: 100%;
 }
 .country:hover {
   cursor: pointer;
@@ -8,6 +8,9 @@
 
 .link {
   text-decoration: none;
+  border-radius: 5px;
+  height: 100%;
+  width: 100%;
 }
 
 .country__img {

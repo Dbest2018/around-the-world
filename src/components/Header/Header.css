@@ -3,8 +3,8 @@
   width: 100%;
   justify-content: space-between;
   padding: 1rem 0;
-  background-color: var(--light-mode-elements);
-  border-bottom: 2px solid var(--light-mode-bg);
+  height: fit-content;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.15);
   color: var(--light-mode-text);
 }
 

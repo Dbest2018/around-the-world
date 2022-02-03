@@ -30,18 +30,22 @@ function App() {
   return (
     <BrowserRouter>
       <div className="app">
-        <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+        <div className="app__header">
+          <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+        </div>
+        {/* <div className="app__main"> */}
+        <Routes>
+          <Route
+            path="/"
+            element={<Home countries={countries} darkMode={darkMode} />}
+          />
+          <Route
+            path="/detail/:id"
+            element={<Detail countries={countries} darkMode={darkMode} />}
+          />
+        </Routes>
+        {/* </div> */}
       </div>
-      <Routes>
-        <Route
-          path="/"
-          element={<Home countries={countries} darkMode={darkMode} />}
-        />
-        <Route
-          path="/detail/:id"
-          element={<Detail countries={countries} darkMode={darkMode} />}
-        />
-      </Routes>
     </BrowserRouter>
   );
 }
