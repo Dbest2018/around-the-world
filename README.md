@@ -27,7 +27,12 @@ Users should be able to:
 
 ### Screenshot
 
+## Light Mode
+
 ![Light mode](./public/screenshot/lightshot.png)
+
+## Dark Mode
+
 ![dark Mode](./public/screenshot/darkshot.png)
 
 ### Links
