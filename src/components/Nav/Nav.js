@@ -24,8 +24,12 @@ const Nav = ({ darkMode, handleSearch }) => {
         />
       </div>
 
-      <select className="nav__filter nav__filter-select" style={styles}>
-        <option selected disabled hidden>
+      <select
+        value="default"
+        className="nav__filter nav__filter-select"
+        style={styles}
+      >
+        <option value="default" disabled hidden>
           Filter by Region
         </option>
         <option value="afica">Africa</option>

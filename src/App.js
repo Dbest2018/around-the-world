@@ -43,7 +43,6 @@ function App() {
         <div className="app__header">
           <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
         </div>
-        {/* <div className="app__main"> */}
         <Routes>
           <Route
             path="/"
@@ -60,7 +59,6 @@ function App() {
             element={<Detail countries={countryFilter} darkMode={darkMode} />}
           />
         </Routes>
-        {/* </div> */}
       </div>
     </BrowserRouter>
   );
