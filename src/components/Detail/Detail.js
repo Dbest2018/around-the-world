@@ -21,11 +21,6 @@ const Detail = ({ countries, darkMode }) => {
     borders,
   } = country;
 
-  // const containerStyles = {
-  //   backgroundColor: darkMode ? "var(--dark-mode-bg)" : "var(--light-mode-bg)",
-  //   color: darkMode ? "var(--dark-mode-text)" : "var(--light-mode-text)"
-  // }
-
   const styles = {
     backgroundColor: darkMode
       ? "var(--dark-mode-elements)"
