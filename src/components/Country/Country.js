@@ -2,9 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Country.css";
 
-const Country = ({ flag, name, population, region, capital, id }) => {
+const Country = ({ flag, name, population, region, capital, id, darkMode }) => {
+  const styles = {
+    backgroundColor: darkMode
+      ? "var(--dark-mode-elements)"
+      : "var(--light-mode-elements)",
+    color: darkMode ? "var(--dark-mode-text)" : "var(--light-mode-text)",
+  };
+
   return (
-    <Link to={`/detail/${id}`} className="link">
+    <Link to={`/detail/${id}`} className="link" style={styles}>
       <div className="country">
         <img src={flag} alt="flag" className="country__img" />
 

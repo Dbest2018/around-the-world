@@ -9,7 +9,7 @@ import Detail from "./components/Detail/Detail";
 
 function App() {
   const [countries, setCountries] = useState([]);
-  // const [countriesShown, setCountriesShown] = useState([]);
+  const [darkMode, setDarkMode] = useState(false);
 
   const api = axios.create({
     baseURL: "https://restcountries.com/v2/all",
@@ -23,16 +23,24 @@ function App() {
     fetchData();
   }, []);
 
+  const toggleDarkMode = () => {
+    setDarkMode((prevMode) => !prevMode);
+  };
+
   return (
     <BrowserRouter>
       <div className="app">
-        <Header />
-        {/* <Home countries={countries} /> */}
-        {/* <Detail countries={countries} /> */}
+        <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       </div>
       <Routes>
-        <Route path="/" element={<Home countries={countries} />} />
-        <Route path="/detail/:id" element={<Detail countries={countries} />} />
+        <Route
+          path="/"
+          element={<Home countries={countries} darkMode={darkMode} />}
+        />
+        <Route
+          path="/detail/:id"
+          element={<Detail countries={countries} darkMode={darkMode} />}
+        />
       </Routes>
     </BrowserRouter>
   );

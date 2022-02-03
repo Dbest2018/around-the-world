@@ -10,7 +10,7 @@
   width: 30%;
   border-radius: 5px;
   background-color: var(--light-mode-elements);
-  color: var(--light-mode-input);
+  color: var(--light-mode-text);
 }
 
 .nav__search-input {
@@ -26,11 +26,11 @@
   padding: 0 1rem;
   border-radius: 5px;
   background-color: var(--light-mode-elements);
+  color: var(--light-mode-text);
 }
 
 .nav__filter-select {
   border: none;
-  color: var(--light-mode-text);
   font-weight: 600;
   font-family: "Nunito Sans", sans-serif;
 }

@@ -3,20 +3,27 @@ import "./Nav.css";
 
 import { IoIosSearch } from "react-icons/io";
 
-const Nav = () => {
+const Nav = ({ darkMode }) => {
+  const styles = {
+    backgroundColor: darkMode
+      ? "var(--dark-mode-elements)"
+      : "var(--light-mode-elements)",
+    color: darkMode ? "var(--dark-mode-text)" : "var(--light-mode-text)",
+  };
   return (
     <div className="nav">
-      <div className="nav__search">
+      <div className="nav__search" style={styles}>
         <IoIosSearch />
         <input
           name="search"
           type="text"
           placeholder="Search for a country"
           className="nav__search-input"
+          style={styles}
         />
       </div>
 
-      <select className="nav__filter nav__filter-select">
+      <select className="nav__filter nav__filter-select" style={styles}>
         <option selected disabled hidden>
           Filter by Region
         </option>

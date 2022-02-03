@@ -4,23 +4,13 @@ import "./Home.css";
 import Nav from "../Nav/Nav";
 import Country from "../Country/Country";
 
-const Home = ({ countries }) => {
-  // function getTenRandomCountries() {
-  //   if (countriesShown.length >= 10 || !countries) {
-  //     console.log("countries is empty or too full");
-  //     return;
-  //   }
-  //   for (let i = 0; i < 10; i++) {
-  //     const randomNum = Math.ceil(Math.random() * countries.length);
-  //     setCountriesShown((prevCountriesShown) => [
-  //       ...prevCountriesShown,
-  //       countries[randomNum],
-  //     ]);
-  //   }
-  // }
+const Home = ({ countries, darkMode }) => {
+  const styles = {
+    backgroundColor: darkMode ? "var(--dark-mode-bg)" : "var(--light-mode-bg)",
+  };
   return (
-    <div className="home">
-      <Nav />
+    <div className="home" style={styles}>
+      <Nav darkMode={darkMode} />
       <div className="home__countries">
         {countries.map((country, index) => {
           return (
@@ -32,6 +22,7 @@ const Home = ({ countries }) => {
               population={country.population}
               region={country.region}
               capital={country.capital}
+              darkMode={darkMode}
             />
           );
         })}

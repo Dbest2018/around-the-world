@@ -4,7 +4,7 @@ import "./Detail.css";
 import { BiArrowBack } from "react-icons/bi";
 import { useParams, Link } from "react-router-dom";
 
-const Detail = ({ countries }) => {
+const Detail = ({ countries, darkMode }) => {
   let params = useParams();
   const country = countries[params.id];
   const {
@@ -20,10 +20,23 @@ const Detail = ({ countries }) => {
     languages,
     borders,
   } = country;
+
+  // const containerStyles = {
+  //   backgroundColor: darkMode ? "var(--dark-mode-bg)" : "var(--light-mode-bg)",
+  //   color: darkMode ? "var(--dark-mode-text)" : "var(--light-mode-text)"
+  // }
+
+  const styles = {
+    backgroundColor: darkMode
+      ? "var(--dark-mode-elements)"
+      : "var(--light-mode-elements)",
+    color: darkMode ? "var(--dark-mode-text)" : "var(--light-mode-text)",
+  };
+
   return (
-    <div className="detail">
+    <div className="detail" style={styles}>
       <Link to="/" className="detail__link">
-        <div className="detail__nav">
+        <div className="detail__nav" style={styles}>
           <BiArrowBack />
           <div className="detail__nav-text">Back</div>
         </div>

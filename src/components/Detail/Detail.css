@@ -1,22 +1,23 @@
 .detail {
   padding: 2rem;
+  background-color: var(--light-mode-elements);
+  height: 100vh;
 }
 
 .detail__link {
   text-decoration: none;
-  color: var(--light-mode-text);
 }
 
 .detail__nav {
+  color: var(--light-mode-text);
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid whitesmoke;
+
   width: 5rem;
   padding: 0.5rem;
   border-radius: 5px;
   cursor: pointer;
-  background-color: var(--light-mode-elements);
   box-shadow: 1.5px 2px rgba(0, 0, 0, 0.1), -1.5px -2px rgba(0, 0, 0, 0.1);
 }
 
@@ -30,7 +31,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 5rem;
-  background-color: var(--light-mode-elements);
 }
 
 .detail__country-flag {
@@ -90,7 +90,6 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
-    background-color: var(--light-mode-elements);
   }
 
   .detail__country-info__middle {
