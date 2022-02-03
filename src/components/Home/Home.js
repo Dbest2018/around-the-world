@@ -22,22 +22,26 @@ const Home = ({
         handleRegion={handleRegion}
         regionSelected={regionSelected}
       />
-      <div className="home__countries">
-        {countries.map((country, index) => {
-          return (
-            <Country
-              key={index}
-              id={index}
-              flag={country.flag}
-              name={country.name}
-              population={country.population}
-              region={country.region}
-              capital={country.capital}
-              darkMode={darkMode}
-            />
-          );
-        })}
-      </div>
+      {countries ? (
+        <div className="home__countries">
+          {countries.map((country, index) => {
+            return (
+              <Country
+                key={index}
+                id={index}
+                flag={country.flag}
+                name={country.name}
+                population={country.population}
+                region={country.region}
+                capital={country.capital}
+                darkMode={darkMode}
+              />
+            );
+          })}
+        </div>
+      ) : (
+        <h2> Loading... </h2>
+      )}
     </div>
   );
 };

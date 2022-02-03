@@ -31,7 +31,7 @@ const Nav = ({ darkMode, handleSearch, handleRegion, regionSelected }) => {
         onChange={handleRegion}
       >
         <option value={regionSelected} disabled hidden>
-          Filter by Region
+          {regionSelected}
         </option>
         <option value="all">All</option>
         <option value="africa">Africa</option>
