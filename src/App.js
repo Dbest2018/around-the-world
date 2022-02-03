@@ -47,7 +47,9 @@ function App() {
       setCountryFilter(data.data);
     }
     fetchData();
-  }, [api]);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const toggleDarkMode = () => {
     setDarkMode((prevMode) => !prevMode);
