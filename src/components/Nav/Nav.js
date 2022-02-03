@@ -3,7 +3,7 @@ import "./Nav.css";
 
 import { IoIosSearch } from "react-icons/io";
 
-const Nav = ({ darkMode }) => {
+const Nav = ({ darkMode, handleSearch }) => {
   const styles = {
     backgroundColor: darkMode
       ? "var(--dark-mode-elements)"
@@ -20,6 +20,7 @@ const Nav = ({ darkMode }) => {
           placeholder="Search for a country"
           className="nav__search-input"
           style={styles}
+          onChange={handleSearch}
         />
       </div>
 

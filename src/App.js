@@ -9,7 +9,17 @@ import Detail from "./components/Detail/Detail";
 
 function App() {
   const [countries, setCountries] = useState([]);
+  const [countryFilter, setCountryFilter] = useState([]);
   const [darkMode, setDarkMode] = useState(false);
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    const { value } = e.target;
+    const filter = countries.filter((country) =>
+      country.name.toLowerCase().includes(value.toLowerCase())
+    );
+    setCountryFilter(filter);
+  };
 
   const api = axios.create({
     baseURL: "https://restcountries.com/v2/all",
@@ -37,11 +47,17 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={<Home countries={countries} darkMode={darkMode} />}
+            element={
+              <Home
+                countries={countryFilter}
+                darkMode={darkMode}
+                handleSearch={handleSearch}
+              />
+            }
           />
           <Route
             path="/detail/:id"
-            element={<Detail countries={countries} darkMode={darkMode} />}
+            element={<Detail countries={countryFilter} darkMode={darkMode} />}
           />
         </Routes>
         {/* </div> */}

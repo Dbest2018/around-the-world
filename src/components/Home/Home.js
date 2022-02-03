@@ -4,13 +4,13 @@ import "./Home.css";
 import Nav from "../Nav/Nav";
 import Country from "../Country/Country";
 
-const Home = ({ countries, darkMode }) => {
+const Home = ({ countries, darkMode, handleSearch }) => {
   const styles = {
     backgroundColor: darkMode ? "var(--dark-mode-bg)" : "var(--light-mode-bg)",
   };
   return (
     <div className="home" style={styles}>
-      <Nav darkMode={darkMode} />
+      <Nav darkMode={darkMode} handleSearch={handleSearch} />
       <div className="home__countries">
         {countries.map((country, index) => {
           return (
