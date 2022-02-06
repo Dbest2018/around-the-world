@@ -83,7 +83,7 @@
   border: 2px solid whitesmoke;
 }
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 650px) {
   .detail__country {
     height: 300px;
     margin-top: 2rem;
