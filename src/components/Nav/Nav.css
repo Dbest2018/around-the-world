@@ -10,6 +10,7 @@
   width: 30%;
   border-radius: 5px;
   background-color: var(--light-mode-elements);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 3px;
   color: var(--light-mode-text);
 }
 
@@ -27,6 +28,7 @@
   border-radius: 5px;
   background-color: var(--light-mode-elements);
   color: var(--light-mode-text);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 3px;
 }
 
 .nav__filter-select {
