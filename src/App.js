@@ -11,7 +11,7 @@ function App() {
   const [countries, setCountries] = useState([]);
   const [countryFilter, setCountryFilter] = useState([]);
   const [darkMode, setDarkMode] = useState(false);
-  const [regionSelected, setRegionSelected] = useState("");
+  const [regionSelected, setRegionSelected] = useState("Filter By Region");
 
   const handleSearch = (e) => {
     e.preventDefault();
