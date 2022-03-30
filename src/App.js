@@ -57,29 +57,25 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="app">
-        <div className="app__header">
-          <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-        </div>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <Home
-                countries={countryFilter}
-                darkMode={darkMode}
-                handleSearch={handleSearch}
-                handleRegion={handleRegion}
-                regionSelected={regionSelected}
-              />
-            }
-          />
-          <Route
-            path="/detail/:id"
-            element={<Detail countries={countryFilter} darkMode={darkMode} />}
-          />
-        </Routes>
-      </div>
+      <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Home
+              countries={countryFilter}
+              darkMode={darkMode}
+              handleSearch={handleSearch}
+              handleRegion={handleRegion}
+              regionSelected={regionSelected}
+            />
+          }
+        />
+        <Route
+          path="/detail/:id"
+          element={<Detail countries={countryFilter} darkMode={darkMode} />}
+        />
+      </Routes>
     </BrowserRouter>
   );
 }
