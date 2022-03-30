@@ -14,6 +14,10 @@ const Home = ({
   const styles = {
     backgroundColor: darkMode ? "var(--dark-mode-bg)" : "var(--light-mode-bg)",
   };
+
+  if (countries.length <= 0) {
+    return <div className="home__loading-text">Loading...</div>;
+  }
   return (
     <div className="home" style={styles}>
       <Nav
