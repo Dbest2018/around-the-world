@@ -1,7 +1,7 @@
 .detail {
   padding: 2rem;
   background-color: var(--light-mode-elements);
-  height: 81.9vh; /* bad code */
+  height: 88.4vh;
 }
 
 .detail__link {
