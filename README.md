@@ -54,5 +54,5 @@ Users should be able to:
 ## Author
 
 - Website - [Ibrahim Shittu](https://iam-ibrahim.netlify.app/)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/Dbest2018)
-- Twitter - [@yourusername](https://www.twitter.com/iamDbest20)
+- Frontend Mentor - [@Dbest2018](https://www.frontendmentor.io/profile/Dbest2018)
+- Twitter - [@iamDbest20](https://www.twitter.com/iamDbest20)
