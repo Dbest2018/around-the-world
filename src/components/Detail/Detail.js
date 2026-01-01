@@ -6,19 +6,19 @@ import { useParams, Link } from "react-router-dom";
 
 const Detail = ({ countries, darkMode }) => {
   let params = useParams();
+  // console.log(params.id);
   const country = countries[params.id];
+  console.log(countries);
   const {
     flags,
     name,
-    nativeName,
     population,
     region,
     subregion,
     capital,
-    topLevelDomain,
+    timezones,
     currencies,
     languages,
-    borders,
   } = country;
 
   const styles = {
@@ -28,7 +28,7 @@ const Detail = ({ countries, darkMode }) => {
     color: darkMode ? "var(--dark-mode-text)" : "var(--light-mode-text)",
   };
 
-  return (
+  return country ? (
     <div className="detail" style={styles}>
       <Link to="/" className="detail__link">
         <div className="detail__nav" style={styles}>
@@ -43,12 +43,12 @@ const Detail = ({ countries, darkMode }) => {
           className="detail__country-flag"
         />
         <div className="detail__country-info">
-          <div className="detail__country-info__header">{name}</div>
+          <div className="detail__country-info__header">{name.common}</div>
 
           <div className="detail__country-info__middle">
             <div className="detail__country-info__left">
               <div className="text">
-                Native Name: <span>{nativeName}</span>
+                Native Name: <span>{name.nativeName.eng.common}</span>
               </div>
               <div className="text">
                 Population: <span>{population}</span>
@@ -60,36 +60,31 @@ const Detail = ({ countries, darkMode }) => {
                 Sub Region: <span>{subregion}</span>
               </div>
               <div className="text">
-                Capital: <span>{capital ? capital : "None"}</span>
+                Capital: <span>{capital ? capital[0] : "None"}</span>
               </div>
             </div>
 
             <div className="detail__country-info__right">
               <div className="text">
-                Top Level Domain:{" "}
-                <span>{topLevelDomain ? topLevelDomain[0] : "None"}</span>
+                Time Zone: <span>{timezones ? timezones[0] : "None"}</span>
               </div>
               <div className="text">
                 Currencies:{" "}
-                <span>{currencies ? currencies[0].code : "None"}</span>
+                <span>
+                  {currencies ? Object.values(currencies)[0].name : "None"}
+                </span>
               </div>
               <div className="text">
-                Languages: <span>{languages ? languages[0].name : "None"}</span>
+                Languages:{" "}
+                <span>{languages ? Object.values(languages)[0] : "None"}</span>
               </div>
-            </div>
-          </div>
-
-          <div className="detail__country-info__footer">
-            <div className="text">Border Countries: </div>
-            <div className="footer__countries">
-              <div>{borders ? borders[0] : "None"}</div>
-              <div>{borders ? borders[1] : "None"}</div>
-              <div>{borders ? borders[2] : "None"}</div>
             </div>
           </div>
         </div>
       </div>
     </div>
+  ) : (
+    <div>Loading</div>
   );
 };
 
