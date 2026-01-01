@@ -6,9 +6,7 @@ import { useParams, Link } from "react-router-dom";
 
 const Detail = ({ countries, darkMode }) => {
   let params = useParams();
-  // console.log(params.id);
   const country = countries[params.id];
-  console.log(countries);
   const {
     flags,
     name,
@@ -84,7 +82,7 @@ const Detail = ({ countries, darkMode }) => {
       </div>
     </div>
   ) : (
-    <div>Loading</div>
+    <div>Loading...</div>
   );
 };
 

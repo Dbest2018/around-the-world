@@ -43,7 +43,6 @@ function App() {
   useEffect(() => {
     async function fetchData() {
       const data = await api.get("./");
-      // console.log(data.data);
       setCountries(data.data);
       setCountryFilter(data.data);
     }
