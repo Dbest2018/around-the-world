@@ -33,7 +33,7 @@ const Home = ({
               <Country
                 key={index}
                 id={index}
-                flag={country.flag}
+                flag={country.flags.svg}
                 name={country.name}
                 population={country.population}
                 region={country.region}

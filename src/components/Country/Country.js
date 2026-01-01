@@ -16,7 +16,7 @@ const Country = ({ flag, name, population, region, capital, id, darkMode }) => {
         <img src={flag} alt="flag" className="country__img" />
 
         <div className="country__text">
-          <div className="country__text-large">{name}</div>
+          <div className="country__text-large">{name.common}</div>
           <div className="country__text-small">
             Population: <span>{population}</span>
           </div>
