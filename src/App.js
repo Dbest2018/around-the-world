@@ -17,7 +17,7 @@ function App() {
     e.preventDefault();
     const { value } = e.target;
     const filter = countries.filter((country) =>
-      country.name.toLowerCase().includes(value.toLowerCase())
+      country.name.common.toLowerCase().includes(value.toLowerCase())
     );
     setCountryFilter(filter);
   };
@@ -37,12 +37,13 @@ function App() {
   };
 
   const api = axios.create({
-    baseURL: "https://restcountries.com/v2/all",
+    baseURL: "https://restcountries.com/v3.1/independent?status=true",
   });
 
   useEffect(() => {
     async function fetchData() {
       const data = await api.get("./");
+      // console.log(data.data);
       setCountries(data.data);
       setCountryFilter(data.data);
     }
